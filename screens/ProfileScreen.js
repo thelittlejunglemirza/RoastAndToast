@@ -4,7 +4,8 @@ import { ExpoLinksView } from '@expo/samples';
 
 export default class Profile extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    header: null,
+    // title: 'Links',
   };
 
   render() {
