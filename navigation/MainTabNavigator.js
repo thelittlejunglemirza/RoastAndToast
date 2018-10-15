@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
@@ -70,8 +70,24 @@ AddingStack.navigationOptions = {
   ),
 };
 
-export default createBottomTabNavigator({
-  ProfileStack,
-  AddingStack,
-  HomeStack,
-});
+export default createMaterialTopTabNavigator({
+    HomeStack,
+    // AddingStack,
+    ProfileStack,
+  },
+  {
+    swipeEnabled: true,
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 12,
+      },
+      // tabStyle: {
+      //   width: 100,
+      // },
+      style: {
+        paddingTop: 10,
+        backgroundColor: 'blue',
+      },
+    }
+  }
+);

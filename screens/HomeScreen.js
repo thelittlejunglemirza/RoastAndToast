@@ -9,8 +9,10 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
 import { MonoText } from '../components/StyledText';
+import ActionButton from 'react-native-action-button';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Icon } from 'expo';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -43,6 +45,7 @@ export default class HomeScreen extends React.Component {
 
             <Text style={styles.getStartedText}>
               Objects Will Go Here!!!
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu feugiat odio, sed consequat odio. Pellentesque arcu neque, consectetur sit amet nisi id, pretium molestie massa. Praesent consectetur at lacus nec porta. Nulla neque ligula, mollis id eros sit amet, pellentesque ullamcorper tellus. Aenean sit amet magna odio. Phasellus vitae justo nisi. In faucibus mattis pharetra. Donec pretium consequat metus. Nulla facilisi. Sed porttitor lacinia risus sed ultrices. Quisque eget est eget metus ultricies suscipit quis vitae nibh. Nunc vitae maximus libero, vitae ornare nisl. Quisque gravida suscipit lectus, eget vulputate libero finibus et.
             </Text>
           </View>
 
@@ -52,6 +55,17 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View> */}
         </ScrollView>
+        <ActionButton buttonColor="rgba(231,76,60,1)" position="center">
+          <ActionButton.Item buttonColor='#9b59b6' title="Person" onPress={() => console.log("notes tapped!")}>
+            <Icon.Ionicons name="md-happy" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+          <ActionButton.Item buttonColor='#3498db' title="Place" onPress={() => {}}>
+            <Icon.Ionicons name="md-planet" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+          <ActionButton.Item buttonColor='#1abc9c' title="Thing" onPress={() => {}}>
+            <Icon.Ionicons name="md-basket" style={styles.actionButtonIcon} />
+          </ActionButton.Item>
+        </ActionButton>
 
         {/* <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
@@ -101,7 +115,13 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -111,7 +131,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
   },
   welcomeContainer: {
     alignItems: 'center',
