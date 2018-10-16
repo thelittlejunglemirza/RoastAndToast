@@ -85,7 +85,7 @@ export default createMaterialTopTabNavigator({
       //   width: 100,
       // },
       style: {
-        paddingTop: 10,
+        paddingTop: 20,
         backgroundColor: 'blue',
       },
     }
